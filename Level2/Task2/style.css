@@ -1,0 +1,402 @@
+/* ==========================================================================
+   0. RESET & BASE
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding/border no longer add to element width */
+}
+
+html {
+  /* Prevents any accidental horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Work Sans", Arial, sans-serif;
+  color: #2C3A31;
+  background: #F6F7F3;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  color: #1B3A2B;
+  line-height: 1.15;
+}
+
+img {
+  /* Golden rule of responsive images: never let them exceed their container */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #C9A227;
+  color: #1B3A2B;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #B38F1F;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   1. NAVIGATION BAR
+   ========================================================================== */
+
+.site-header {
+  background: #FCFCFA;
+  border-bottom: 1px solid #E4E7E0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1B3A2B;
+}
+
+.logo-dot {
+  color: #C9A227;
+}
+
+/* Desktop/tablet nav links: simple horizontal row */
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #C9A227;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hide the checkbox and the hamburger icon by default (desktop first) */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #1B3A2B;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* text | image on desktop */
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6B8F71;
+  margin-bottom: 0.8rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.1rem, 4vw, 3.2rem); /* fluid typography: scales with viewport */
+  margin-bottom: 1.1rem;
+}
+
+.hero-sub {
+  color: #4A5A50;
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: 1.8rem;
+}
+
+.hero-image img {
+  border-radius: 30% 70% 65% 35% / 45% 35% 65% 55%; /* organic "leaf" shaped frame — the page's signature detail */
+  box-shadow: 0 25px 50px -20px rgba(27, 58, 43, 0.35);
+}
+
+/* ==========================================================================
+   3. ABOUT STRIP
+   ========================================================================== */
+
+.about {
+  background: #1B3A2B;
+  color: #E8ECE6;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.about p {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   4. SERVICE / CONTENT CARDS
+   ========================================================================== */
+
+.services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.section-sub {
+  color: #5C6B60;
+  margin-top: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+/* Card grid: 3 columns on desktop, collapses via media queries below */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  text-align: left;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E4E7E0;
+  border-radius: 16px;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 1px 3px rgba(27, 58, 43, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -15px rgba(27, 58, 43, 0.25);
+}
+
+.card-icon {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  color: #C9A227;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  color: #4A5A50;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. CONTACT / CTA SECTION
+   ========================================================================== */
+
+.contact {
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+
+.contact h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.8rem;
+}
+
+.contact p {
+  color: #4A5A50;
+  margin-bottom: 1.8rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.8rem 1.5rem;
+  font-size: 0.85rem;
+  color: #6B7A70;
+  border-top: 1px solid #E4E7E0;
+}
+
+/* ==========================================================================
+   6. TABLET BREAKPOINT — max-width: 768px
+   Applies to tablets and small laptop windows.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  /* Hero: stack text above image instead of side by side */
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+    text-align: left;
+  }
+
+  .hero-image {
+    order: -1; /* show the image first on smaller screens */
+    max-width: 420px;
+  }
+
+  /* Cards: 3 columns feels cramped on tablet, so drop to 2 */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   7. MOBILE BREAKPOINT — max-width: 480px
+   Applies to phones. This is also where the hamburger menu kicks in.
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  /* --- Mobile navigation --- */
+
+  /* Show the hamburger icon, hide the horizontal nav links */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    /* Turn the nav into a full-width dropdown panel, hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #FCFCFA;
+    border-top: 1px solid #E4E7E0;
+    box-shadow: 0 12px 20px -10px rgba(27, 58, 43, 0.15);
+
+    /* Collapsed state: zero height, content clipped, invisible to clicks */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+
+  .nav-links li {
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #EEF0EA;
+  }
+
+  /* The core CSS-only trick: when the hidden checkbox is checked,
+     use the general sibling selector to reveal the menu panel. */
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 320px;
+    opacity: 1;
+  }
+
+  /* Animate the hamburger icon into an "X" when the menu is open */
+  .nav-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  /* --- Mobile typography & spacing --- */
+
+  .hero,
+  .services,
+  .contact {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  /* Cards: single column on small phones */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra — A Field Journal in Photographs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <span class="mark">Terra</span>
+  <span class="tagline">01 — A Field Journal in Photographs</span>
+</header>
+
+<section class="hero-slideshow" aria-label="Automatic photo slideshow">
+  <figure class="slide slide-1">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80" alt="Sunlit alpine peaks rising above a layer of morning cloud">
+    <figcaption><span class="loc">01 / Rondane</span> Alpine ridgeline, first light</figcaption>
+  </figure>
+  <figure class="slide slide-2">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80" alt="Sunbeams filtering through a dense green forest canopy">
+    <figcaption><span class="loc">02 / Black Forest</span> Canopy light, midsummer</figcaption>
+  </figure>
+  <figure class="slide slide-3">
+    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80" alt="Layered mountain ranges fading into a hazy horizon">
+    <figcaption><span class="loc">03 / Kaçkar</span> Ridges, receding into haze</figcaption>
+  </figure>
+  <figure class="slide slide-4">
+    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1600&q=80" alt="A single snow-capped peak catching the last light of day">
+    <figcaption><span class="loc">04 / Denali</span> Last light on the summit</figcaption>
+  </figure>
+  <div class="slide-dots" aria-hidden="true">
+    <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span><span class="dot dot-4"></span>
+  </div>
+</section>
+
+
+<main class="gallery-section">
+  <div class="section-head">
+    <h1>The Collection</h1>
+    <p>Five frames, held onto a little longer than the rest. Tap a print to bring it to the plate.</p>
+  </div>
+
+  <div class="gallery">
+    <input type="radio" name="frame" id="f1" class="frame-radio" checked>
+    <input type="radio" name="frame" id="f2" class="frame-radio">
+    <input type="radio" name="frame" id="f3" class="frame-radio">
+    <input type="radio" name="frame" id="f4" class="frame-radio">
+    <input type="radio" name="frame" id="f5" class="frame-radio">
+
+    <div class="stage">
+      <div class="plate">
+        <img class="pic pic-1" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80" alt="Snow-dusted mountains reflected in a still turquoise lake">
+        <img class="pic pic-2" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1400&q=80" alt="Warm afternoon sunlight streaming through tall forest trees">
+        <img class="pic pic-3" src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1400&q=80" alt="A calm mountain lake bordered by pine trees at dusk">
+        <img class="pic pic-4" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80" alt="Wide open valley with winding river beneath distant mountains">
+        <img class="pic pic-5" src="https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?auto=format&fit=crop&w=1400&q=80" alt="Golden grass field with a lone tree under a pastel sky">
+        <span class="plate-corner"></span>
+      </div>
+      <p class="plate-caption">
+        <span class="cap cap-1">Turquoise Basin — glacial lake, dawn</span>
+        <span class="cap cap-2">Understory — pine forest, late afternoon</span>
+        <span class="cap cap-3">Still Water — mountain lake, dusk</span>
+        <span class="cap cap-4">The Long Valley — river bend, midday</span>
+        <span class="cap cap-5">One Tree Field — open plain, sunset</span>
+      </p>
+    </div>
+
+    <div class="thumbs">
+      <label for="f1" class="thumb thumb-1" title="Turquoise Basin">
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=300&q=70" alt="Thumbnail: snow-dusted mountains reflected in a turquoise lake">
+      </label>
+      <label for="f2" class="thumb thumb-2" title="Understory">
+        <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=300&q=70" alt="Thumbnail: sunlight streaming through forest trees">
+      </label>
+      <label for="f3" class="thumb thumb-3" title="Still Water">
+        <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=300&q=70" alt="Thumbnail: mountain lake bordered by pine trees at dusk">
+      </label>
+      <label for="f4" class="thumb thumb-4" title="The Long Valley">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=300&q=70" alt="Thumbnail: open valley with winding river">
+      </label>
+      <label for="f5" class="thumb thumb-5" title="One Tree Field">
+        <img src="https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?auto=format&fit=crop&w=300&q=70" alt="Thumbnail: golden grass field with a lone tree">
+      </label>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>Terra — built with HTML &amp; CSS only, no JavaScript.</span>
+  <span>Photographs via Unsplash.</span>
+</footer>
+
+</body>
+</html>

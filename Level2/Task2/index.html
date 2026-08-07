@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- This viewport tag is essential for responsive design on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdant — Garden &amp; Landscape Studio</title>
+
+  <!-- Google Fonts: a warm serif for headings, a clean sans for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#top" class="logo">Verdant<span class="logo-dot">.</span></a>
+
+      <!-- Hidden checkbox that powers the hamburger menu (CSS-only, no JS) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <!-- Hamburger icon: only visible on small screens -->
+      <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Nav links: horizontal row on desktop, dropdown panel on mobile -->
+      <ul class="nav-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow">Rooted in care, grown by hand</p>
+      <h1>Gardens that feel like they've always been there.</h1>
+      <p class="hero-sub">
+        Verdant designs and tends outdoor spaces that grow with your home —
+        from the first sketch to the first bloom, and every season after.
+      </p>
+      <a href="#contact" class="btn-primary">Start your garden</a>
+    </div>
+
+    <div class="hero-image">
+      <!-- Responsive image: scales with its container, never overflows -->
+      <img
+        src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80"
+        alt="A lush, sunlit garden path lined with greenery"
+      />
+    </div>
+  </section>
+
+  <!-- ============ ABOUT STRIP ============ -->
+  <section class="about" id="about">
+    <p>
+      Every plot has its own light, soil, and rhythm. We spend as much time listening
+      to a space as we do planting it — the result is a garden that needs less
+      convincing to thrive.
+    </p>
+  </section>
+
+  <!-- ============ SERVICES / CONTENT CARDS ============ -->
+  <section class="services" id="services">
+    <h2>What we do</h2>
+    <p class="section-sub">Three ways to bring a garden to life, start to finish.</p>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-icon">01</div>
+        <h3>Garden Design</h3>
+        <p>Custom planting plans built around your climate, light, and the way you actually use your outdoor space.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">02</div>
+        <h3>Planting &amp; Build</h3>
+        <p>Hands-on installation — beds, borders, paths, and structures — carried out by the same team that designed it.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">03</div>
+        <h3>Seasonal Care</h3>
+        <p>Ongoing pruning, feeding, and watering schedules so your garden keeps its shape long after we've left.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA SECTION ============ -->
+  <section class="contact" id="contact">
+    <h2>Ready to dig in?</h2>
+    <p>Tell us about your space and we'll get back to you within two days.</p>
+    <a href="mailto:hello@verdant.studio" class="btn-primary">hello@verdant.studio</a>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Verdant Garden Studio. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
